@@ -14,10 +14,9 @@
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
 
                     if (doesPopupExist) {
-                        const changedAlready = doesPopupExist.innerText == "Kvantitet"
-                        debugger;
+                        const textNotChanged = doesPopupExist.innerText == "Quantity"
 
-                        if (changedAlready) {
+                        if (textNotChanged) {
                             // set text to kvantitet instead of quantity
                             document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
 
