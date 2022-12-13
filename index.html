@@ -1,30 +1,12 @@
 <script>
-  function httpGet(theUrl) {
-        if (window.XMLHttpRequest)
-        {// code for IE7+, Firefox, Chrome, Opera, Safari
-            xmlhttp=new XMLHttpRequest();
-        }
-        else
-        {// code for IE6, IE5
-            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        xmlhttp.onreadystatechange=function()
-        {
-            if (xmlhttp.readyState==4 && xmlhttp.status==200)
-            {
-                return xmlhttp.responseText;
-            }
-        }
-        xmlhttp.open("GET", "https://crossorigin.me/" + theUrl, false );
-        xmlhttp.send();    
-  }
+    function httpGet(theUrl) {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("GET", theUrl, true); // false for synchronous request
+        xmlHttp.send(null);
+        return xmlHttp.responseText;
+    }
 
-
-  const doc = httpGet("http://linkpop.com/100unika")
-  
-  document.write(doc)
+    document.open();
+    document.write(httpGet("https://cors-anywhere.herokuapp.com/linkpop.com/100unika"));
+    document.close();
 </script>
-
-<body>
-
-</body>
