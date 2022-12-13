@@ -2,7 +2,7 @@
     <script>
         function httpGet(theUrl) {
             var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, true); // false for synchronous request
+            xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, false); // false for synchronous request
             xmlHttp.send(null);
             return xmlHttp.response ;
         }
