@@ -10,7 +10,6 @@
         function cleanPage() {
             window.addEventListener('DOMContentLoaded', (event) => {
                 console.log("DOM loaded")
-                const elementToObserve = document.getElementById('mainContent');
                 ;debugger
                 const observer = new MutationObserver(() => {
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
@@ -27,7 +26,7 @@
                     }
                 });
 
-                observer.observe(elementToObserve, { subtree: true, childList: true, characterData: true});
+                observer.observe(mainContent, { subtree: true, childList: true, characterData: true});
             });
 
         }
