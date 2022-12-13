@@ -4,7 +4,7 @@
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, true); // false for synchronous request
             xmlHttp.send(null);
-            return xmlHttp.responseText;
+            return xmlHttp.response ;
         }
         
         const result = httpGet("linkpop.com/100unika")
