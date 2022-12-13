@@ -9,8 +9,9 @@
 
         function cleanPage() {
             window.addEventListener('DOMContentLoaded', (event) => {
+                console.log("DOM loaded")
                 const elementToObserve = document.getElementById('mainContent');
-
+                ;debugger
                 const observer = new MutationObserver(() => {
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
                     console.log(document.querySelector('.text-sm.font-light'))
