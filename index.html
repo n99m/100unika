@@ -1,12 +1,14 @@
-<script>
-    function httpGet(theUrl) {
-        var xmlHttp = new XMLHttpRequest();
-        xmlHttp.open("GET", theUrl, true); // false for synchronous request
-        xmlHttp.send(null);
-        return xmlHttp.responseText;
-    }
+<body>
+    <script>
+        function httpGet(theUrl) {
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", theUrl, true); // false for synchronous request
+            xmlHttp.send(null);
+            return xmlHttp.responseText;
+        }
 
-    document.open();
-    document.write(httpGet("https://cors-anywhere.herokuapp.com/linkpop.com/100unika"));
-    document.close();
-</script>
+        document.open();
+        document.write(httpGet("https://cors-anywhere.herokuapp.com/linkpop.com/100unika"));
+        document.close();
+    </script>
+</body>
