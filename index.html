@@ -8,9 +8,13 @@
         }
 
         function cleanPage() {
-            const elementToObserve = document.querySelector('#headlessui-portal-root');
+            const elementToObserve = document.querySelector('#mainContent');
+
             const observer = new MutationObserver(() => {
-                if (document.querySelector('div[data-testid="product-popup"]')) {
+                const doesPopupExist = document.querySelector('div[data-testid="product-popup"]')
+                
+                console.log(doesPopupExist)
+                if (doesPopupExist) {
                     
                     // set text to kvantitet instead of quantity
                     document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
