@@ -8,7 +8,7 @@
         }
 
         function cleanPage() {
-            const elementToObserve = document.querySelector('#mainContent');
+            const elementToObserve = document.getElementById('mainContent');
 
             const observer = new MutationObserver(() => {
                 const doesPopupExist = document.querySelector('div[data-testid="product-popup"]')
