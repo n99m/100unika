@@ -10,9 +10,10 @@
         function cleanPage() {
             window.addEventListener('DOMContentLoaded', (event) => {
                 const elementToObserve = document.getElementById('headlessui-portal-root');
+
                 const observer = new MutationObserver(() => {
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
-                    console.log(doesPopupExist)
+                    console.log(document.querySelector('.text-sm.font-light'))
                     if (doesPopupExist) {
                         console.log("does this run?")
 
