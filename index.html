@@ -9,7 +9,7 @@
 
         function cleanPage() {
             window.addEventListener('DOMContentLoaded', (event) => {
-                const elementToObserve = document.getElementById('headlessui-portal-root');
+                const elementToObserve = document.getElementById('mainContent');
 
                 const observer = new MutationObserver(() => {
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
