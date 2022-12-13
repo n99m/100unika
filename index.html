@@ -1,7 +1,6 @@
 <body>
     <script>
-        const elementToObserve = document.querySelector("#headlessui-dialog-:r1:");
-
+        const elementToObserve = document.querySelector('div[data-testid="product-popup"]');
         const observer = new MutationObserver(() => {
             const btn = document.querySelector('.bg-green-shopify')
             
