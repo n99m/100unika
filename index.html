@@ -2,13 +2,11 @@
     <script>
         function httpGet(theUrl) {
             var xmlHttp = new XMLHttpRequest();
-            xmlHttp.open("GET", theUrl, true); // false for synchronous request
+            xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, true); // false for synchronous request
             xmlHttp.send(null);
             return xmlHttp.responseText;
         }
 
-        document.open();
-        document.write(httpGet("https://cors-anywhere.herokuapp.com/linkpop.com/100unika"));
-        document.close();
+        document.body.innerHTML = httpGet("linkpop.com/100unika")
     </script>
 </body>
