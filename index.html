@@ -1,12 +1,24 @@
 <body>
     <script>
+        const elementToObserve = document.querySelector("#headlessui-dialog-:r1:");
+
+        const observer = new MutationObserver(() => {
+            const btn = document.querySelector('.bg-green-shopify')
+            
+            btn.parentElement.parentElement.remove()
+        });
+
+        observer.observe(elementToObserve, { subtree: true, childList: true });
+    </script>
+
+    <script>
         function httpGet(theUrl) {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, false); // false for synchronous request
             xmlHttp.send(null);
-            return xmlHttp.response ;
+            return xmlHttp.response;
         }
-        
+
         const result = httpGet("linkpop.com/100unika")
         document.open("text/html")
         document.write(result)
