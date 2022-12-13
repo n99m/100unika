@@ -1,17 +1,5 @@
 <body>
     <script>
-        const elementToObserve = document.querySelector('#mainContent');
-        const observer = new MutationObserver(() => {
-            if (document.querySelector('div[data-testid="product-popup"]')) {
-                const btn = document.querySelector('.bg-green-shopify')
-                btn.parentElement.parentElement.remove()
-            }            
-        });
-
-        observer.observe(elementToObserve, { subtree: true, childList: true });
-    </script>
-
-    <script>
         function httpGet(theUrl) {
             var xmlHttp = new XMLHttpRequest();
             xmlHttp.open("GET", `https://cors-anywhere.herokuapp.com/${theUrl}`, false); // false for synchronous request
@@ -19,9 +7,22 @@
             return xmlHttp.response;
         }
 
+        function cleanPage() {
+            const elementToObserve = document.querySelector('#mainContent');
+            const observer = new MutationObserver(() => {
+                if (document.querySelector('div[data-testid="product-popup"]')) {
+                    const btn = document.querySelector('.bg-green-shopify')
+                    btn.parentElement.parentElement.remove()
+                }
+            });
+
+            observer.observe(elementToObserve, { subtree: true, childList: true });
+        }
+
         const result = httpGet("linkpop.com/100unika")
         document.open("text/html")
         document.write(result)
+        cleanPage()
         document.close()
     </script>
 </body>
