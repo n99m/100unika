@@ -11,9 +11,8 @@
             const elementToObserve = document.getElementById('mainContent');
 
             const observer = new MutationObserver(() => {
-                const doesPopupExist = document.querySelector('div[data-testid="product-popup"]')
-                console.log(document.getElementsByTagName('*'));
-                console.log(doesPopupExist)
+                const doesPopupExist = document.querySelector('.text-sm.font-light')
+                console.log(doesPopupExist) 
                 if (doesPopupExist) {
                     
                     // set text to kvantitet instead of quantity
