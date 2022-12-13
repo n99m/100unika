@@ -8,9 +8,14 @@
         }
 
         function cleanPage() {
-            const elementToObserve = document.querySelector('#mainContent');
+            const elementToObserve = document.querySelector('#headlessui-portal-root');
             const observer = new MutationObserver(() => {
                 if (document.querySelector('div[data-testid="product-popup"]')) {
+                    
+                    // set text to kvantitet instead of quantity
+                    document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
+
+                    // remove add to card button
                     const btn = document.querySelector('.bg-green-shopify')
                     btn.parentElement.parentElement.remove()
                 }
@@ -22,6 +27,7 @@
         const result = httpGet("linkpop.com/100unika")
         document.open("text/html")
         document.write(result)
+        console.log(document.querySelector("#mainContent"))
         cleanPage()
         document.close()
     </script>
