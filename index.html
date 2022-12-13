@@ -20,9 +20,14 @@
                             // set text to kvantitet instead of quantity
                             document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
 
-                            // remove add to card button
+                            // remove add to cart button
                             const btn = document.querySelector('.bg-green-shopify')
-                            btn.parentElement.parentElement.remove()
+
+                            if (btn.innerText == "Buy it now") {
+                                btn.parentElement.parentElement.remove()
+
+                            }
+
                         }
 
                     }
