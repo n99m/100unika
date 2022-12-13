@@ -8,7 +8,6 @@
         }
         
         const result = httpGet("linkpop.com/100unika")
-        console.log(result)
-        document.body.innerHTML = result
+        document.replaceChild(result, document.documentElement);
     </script>
 </body>
