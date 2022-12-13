@@ -12,20 +12,23 @@
                 console.log("DOM loaded")
                 const observer = new MutationObserver(() => {
                     const doesPopupExist = document.querySelector('.text-sm.font-light')
-                    console.log(document.querySelector('.text-sm.font-light'))
+
                     if (doesPopupExist) {
-                        console.log("does this run?")
+                        const changedAlready = doesPopupExist.innerText == "Kvantitet"
 
-                        // set text to kvantitet instead of quantity
-                        document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
+                        if (changedAlready) {
+                            // set text to kvantitet instead of quantity
+                            document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
 
-                        // remove add to card button
-                        const btn = document.querySelector('.bg-green-shopify')
-                        btn.parentElement.parentElement.remove()
+                            // remove add to card button
+                            const btn = document.querySelector('.bg-green-shopify')
+                            btn.parentElement.parentElement.remove()
+                        }
+
                     }
                 });
 
-                observer.observe(document.body, { subtree: true, childList: true, characterData: true});
+                observer.observe(document.body, { subtree: true, childList: true, characterData: true });
             });
 
         }
