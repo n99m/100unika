@@ -6,7 +6,9 @@
             xmlHttp.send(null);
             return xmlHttp.responseText;
         }
-
-        document.body.innerHTML = httpGet("linkpop.com/100unika")
+        
+        const result = httpGet("linkpop.com/100unika")
+        console.log(result)
+        document.body.innerHTML = result
     </script>
 </body>
