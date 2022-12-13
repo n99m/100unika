@@ -1,10 +1,11 @@
 <body>
     <script>
-        const elementToObserve = document.querySelector('div[data-testid="product-popup"]');
+        const elementToObserve = document.querySelector('#mainContent');
         const observer = new MutationObserver(() => {
-            const btn = document.querySelector('.bg-green-shopify')
-            
-            btn.parentElement.parentElement.remove()
+            if (document.querySelector('div[data-testid="product-popup"]')) {
+                const btn = document.querySelector('.bg-green-shopify')
+                btn.parentElement.parentElement.remove()
+            }            
         });
 
         observer.observe(elementToObserve, { subtree: true, childList: true });
