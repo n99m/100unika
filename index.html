@@ -19,17 +19,15 @@
                         if (textNotChanged) {
                             // set text to kvantitet instead of quantity
                             document.querySelector(".text-sm.font-light").innerText = "Kvantitet"
+                            document.querySelector(".text-green-shopify").innerText = "Köp nu"
 
                             // remove add to cart button
                             const btn = document.querySelector('.bg-green-shopify')
 
                             if (btn.innerText == "Add to bag") {
                                 btn.parentElement.parentElement.remove()
-
                             }
-
                         }
-
                     }
                 });
 
